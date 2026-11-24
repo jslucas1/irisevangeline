@@ -1,0 +1,5 @@
+node_modules/
+_site/
+.cache/
+# Unedited originals (e.g. photos with names/faces we cropped out) — never published or committed
+_originals/

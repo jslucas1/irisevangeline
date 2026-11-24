@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<article class="story">
+  <header class="story-header">
+    <p class="story-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      {% set age = page.date | irisAge(site) %}{% if age %}<span class="age">{{ age }}</span>{% endif %}
+    </p>
+    <h1>{{ title }}</h1>
+  </header>
+
+  <div class="story-body">
+    {{ content | safe }}
+  </div>
+
+  {% set newer = collections.stories | getPreviousCollectionItem %}
+  {% set older = collections.stories | getNextCollectionItem %}
+  <nav class="story-nav">
+    {% if older %}<a class="older" href="{{ older.url }}">← {{ older.data.title }}</a>{% else %}<span></span>{% endif %}
+    {% if newer %}<a class="newer" href="{{ newer.url }}">{{ newer.data.title }} →</a>{% endif %}
+  </nav>
+</article>

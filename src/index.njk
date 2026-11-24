@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: Stories
+---
+<section class="hero">
+  <p class="eyebrow">{{ site.tagline }}</p>
+  <h1>{{ site.fullName }}</h1>
+  {% if site.birthDate %}
+    <p class="status">Born {{ site.birthDate | readableDate }}</p>
+  {% else %}
+    <p class="status">Arriving June 2027</p>
+  {% endif %}
+  <div class="rule" aria-hidden="true">❦</div>
+</section>
+
+<section class="story-list" aria-label="Stories">
+  {% for story in collections.stories %}
+  <article class="card">
+    <a href="{{ story.url }}">
+      {% if story.data.cover %}
+      <img src="{{ story.url }}{{ story.data.cover }}" alt="{{ story.data.coverAlt or story.data.title }}">
+      {% endif %}
+      <div class="card-text">
+        <p class="story-meta">
+          <time datetime="{{ story.date | isoDate }}">{{ story.date | readableDate }}</time>
+          {% set age = story.date | irisAge(site) %}{% if age %}<span class="age">{{ age }}</span>{% endif %}
+        </p>
+        <h2>{{ story.data.title }}</h2>
+        {% if story.data.summary %}<p>{{ story.data.summary }}</p>{% endif %}
+        <span class="read-more">Read the story →</span>
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+</section>

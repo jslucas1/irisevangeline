@@ -10,4 +10,4 @@ coverAlt: Ultrasound image of Iris at twelve weeks
 
 At twelve weeks and three days, we got our first real look at Iris!
 
-*Write the rest of the story here — who was there, what it felt like to see her for the first time, what everyone said.*
+She was bouncing and dancing all over the place.  Even got a little wave at the camera!

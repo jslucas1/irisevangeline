@@ -182,6 +182,14 @@ main { padding: 0 1rem 3rem; }
   margin: 1.5rem auto;
 }
 .story-body p:has(> picture, > img) { margin: 0; }
+.story-body blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--gold);
+  font-family: var(--serif-display);
+  font-size: 1.35rem;
+  color: var(--berry);
+}
 
 .story-nav {
   display: flex;
